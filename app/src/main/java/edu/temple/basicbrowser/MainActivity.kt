@@ -35,10 +35,13 @@ class MainActivity : AppCompatActivity() {
         // enable js
         webView.settings.javaScriptEnabled = true
 
+        val me = this
+
         // Allow your browser to intercept hyperlink clicks
         webView.webViewClient = object: WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
+                me.setTitle(view?.title)
             }
         }
 
