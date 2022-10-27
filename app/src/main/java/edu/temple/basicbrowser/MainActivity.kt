@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
                 url = "https://" + url
             }
 
+            // show the updated URL in the address bar in place of what the user typed
+            urlEditText.setText(url)
 
             requestQueue.add(
                 StringRequest(Request.Method.GET, url, {
